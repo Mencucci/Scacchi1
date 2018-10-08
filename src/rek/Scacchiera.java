@@ -2,6 +2,8 @@ package rek;
 
 import rek.Pezzi.Pezzo;
 
+import java.awt.*;
+
 public class Scacchiera {
 
     Casella[][] griglia;
@@ -41,4 +43,15 @@ public class Scacchiera {
         }
         throw new PezzoMangiatoException();
     }
+
+    public Casella getCellAbove(Cella c) throws IndexOutOfBoundsException
+    {
+
+    }
+
+    public Casella GetCellBelow(Cella c);
+
+    public Casella GetCellLeft(Cella c);
+
+    public Casella GetCellRight(Cella c);
 }
