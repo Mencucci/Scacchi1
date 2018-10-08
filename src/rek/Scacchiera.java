@@ -8,6 +8,7 @@ public class Scacchiera {
 
     Casella[][] griglia;
     // griglia[row][column];
+    // griglia[X][Y];
     /*
     | T | C | A | Q | K | A | C | T |
     ...
@@ -44,14 +45,24 @@ public class Scacchiera {
         throw new PezzoMangiatoException();
     }
 
-    public Casella getCellAbove(Cella c) throws IndexOutOfBoundsException
+    public Casella getCellAbove(Casella c) throws IndexOutOfBoundsException
     {
-
+        if(c.getY() >= SIZE) throw new IndexOutOfBoundsException();
+        return griglia[c.getX()][c.getY() + 1];
     }
 
-    public Casella GetCellBelow(Cella c);
+    public Casella GetCellBelow(Casella c) throws IndexOutOfBoundsException {
+        if(c.getY() == 0) throw new IndexOutOfBoundsException();
+        return griglia[c.getX()][c.getY() - 1];
+    }
 
-    public Casella GetCellLeft(Cella c);
+    public Casella GetCellLeft(Casella c) throws IndexOutOfBoundsException {
+        if(c.getX() == 0) throw new IndexOutOfBoundsException();
+        return griglia[c.getX() - 1][c.getY()];
+    }
 
-    public Casella GetCellRight(Cella c);
+    public Casella GetCellRight(Casella c) throws  IndexOutOfBoundsException {
+        if(c.getX() >= SIZE) throw new IndexOutOfBoundsException();
+        return griglia[c.getX() + 1][c.getY()];
+    }
 }

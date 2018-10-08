@@ -6,26 +6,42 @@ public class Casella {
 
     private Pezzo pezzo;
     private Scacchiera scacchiera;
+    /**
+     * Coordinata x della {@code Casella} nella {@code Scacchiera} di cui è parte
+     */
+    private final int x;
 
+    /**
+     * Coordinata y della {@code Casella} nella {@code Scacchiera} di cui è parte
+     */
+    private final int y;
     /**
      * Costruisce una {@Casella} senza alcun {@Pezzo} al suo interno.
      *
      * @param s {@code Scacchiera} cui la {@code Casella} appartiene.
+     * @param x Coordinata x
+     * @param y Coordinata y
      */
-    public Casella(Scacchiera s) {
+    public Casella(Scacchiera s, int x, int y) {
         pezzo = null;
         scacchiera = s;
+        this.x = x;
+        this.y = y;
     }
 
     /**
      * Costruisce una {@code Casella} con un Pezzo al suo interno.
      *
-     * @param p
-     * @param s
+     * @param p {@code Pezzo} da creare su questa nuova {@code Casella}
+     * @param s {@code Scacchiera} cui la {@code Casella} appartiene.
+     * @param x Coordinata x
+     * @param y Coordinata y
      */
-    public Casella(Pezzo p, Scacchiera s) {
+    public Casella(Scacchiera s, int x, int y, Pezzo p) {
         pezzo = p;
         scacchiera = s;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -84,4 +100,7 @@ public class Casella {
     }
 
     public Scacchiera getScacchiera() {return this.scacchiera;}
+
+    public int getX() {return this.x;}
+    public int getY() {return this.y;}
 }
